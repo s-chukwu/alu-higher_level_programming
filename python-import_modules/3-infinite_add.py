@@ -8,4 +8,3 @@ if __name__ == "__main__":
         total += int(arg)
 
     print("{}".format(total))
-
