@@ -14,19 +14,24 @@ def main():
     operator = sys.argv[2]
     b = int(sys.argv[3])
 
-    operators = {
-        '+': add,
-        '-': sub,
-        '*': mul,
-        '/': div
-    }
-
-    if operator not in operators:
+    if operator == '+':
+        result = add(a, b)
+    elif operator == '-':
+        result = sub(a, b)
+    elif operator == chr(42):
+        result = mul(a, b)
+    elif operator == '/':
+        result = div(a, b)
+    else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
-    result = operators[operator](a, b)
     print("{} {} {} = {}".format(a, operator, b, result))
+
+
+if __name__ == "__main__":
+    main()
+
 
 
 if __name__ == "__main__":
