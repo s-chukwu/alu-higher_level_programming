@@ -1,14 +1,19 @@
 #!/usr/bin/python3
 import sys
-from calculator_1 import add, sub, mul, div
+from calculator_1
 
 if __name__ == "__main__":
-    # Check if we have exactly 3 arguments (plus the script name = 4)
+    # 1. Check if the number of arguments is exactly 3 (plus the script name = 4)
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-    # Map the string operators to the imported functions
+    # 2. Extract arguments
+    a_str = sys.argv[1]
+    operator = sys.argv[2]
+    b_str = sys.argv[3]
+
+    # 3. Map operators to the explicitly imported functions
     ops = {
         "+": add,
         "-": sub,
@@ -16,20 +21,17 @@ if __name__ == "__main__":
         "/": div
     }
 
-    # Extract the operator string from the arguments
-    operator = sys.argv[2]
-
-    # Validate the operator
+    # 4. Check if the operator is valid
     if operator not in ops:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
-    # Cast a and b to integers
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
+    # 5. Cast a and b into integers
+    a = int(a_str)
+    b = int(b_str)
 
-    # Calculate the result by calling the function from the dictionary
+    # 6. Calculate the result
     result = ops[operator](a, b)
 
-    # Print the result
+    # 7. Print the exact required output format
     print("{} {} {} = {}".format(a, operator, b, result))
