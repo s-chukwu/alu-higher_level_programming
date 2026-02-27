@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This script imports math functions from calculator_1.py
+and runs basic arithmetic operations from the command line.
+"""
 import sys
 from calculator_1 import add, sub, mul, div
 
